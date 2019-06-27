@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for folder in folders %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <img class="rounded-circle account-img" src="{{ folder.cover_pic }}">
+              <a class="nav-item nav-link" href="{{ url_for('all_posts', fol_id=folder.id) }}">folder.title</a>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+
+    <-- one option must be there, wil be for creating the new folder, then the user will redirect to the blank folder and ask for uploading the image -->
+{% endblock content %}

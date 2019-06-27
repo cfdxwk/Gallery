@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <img src="{{ post.image_file }}">
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+    <!-- here we need to give a option for adding the image -->
+    <a class="nav-item nav-link" href="{{ url_for('create_post.html', fol_id=folder.id }}">New Post</a>
+{% endblock content %}
